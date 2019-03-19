@@ -77,13 +77,16 @@ checkbox = (e) => {
 ans = () => {
     let {answers, checked} = this.state
     return(answers.map((value,i) => {
-        return (<div className="answer"><input
-            onChange={this.checkbox}
-            type="radio"
-            name={answers[i]}
-            value={answers[i]}
-            checked={checked === answers[i]}
-            /><span dangerouslySetInnerHTML={{__html: answers[i]}} /></div>)
+        return (<div className="answer">
+                    <input
+                    onChange={this.checkbox}
+                    type="radio"
+                    name={answers[i]}
+                    value={answers[i]}
+                    checked={checked === answers[i]}
+                    />
+                    <span dangerouslySetInnerHTML={{__html: answers[i]}} />
+                </div>)
         })
     )
 }
@@ -93,12 +96,12 @@ ans = () => {
     if(api !== '' && !result) {
         return (
             <div>
-            <div className="mqa">
-            <h2 dangerouslySetInnerHTML={{__html: question}} />
-            <div className="answers">{ answers !== '' ? this.ans() : null }</div>
-            <button onClick={this.checkAnswer.bind()}>Submit</button>
-            <button onClick={this.reset.bind()}>Reset</button>
-            </div>
+                <div className="mqa">
+                    <h2 dangerouslySetInnerHTML={{__html: question}} />
+                    <div className="answers">{ answers !== '' ? this.ans() : null }</div>
+                    <button onClick={this.checkAnswer.bind()}>Submit</button>
+                    <button onClick={this.reset.bind()}>Reset</button>
+                </div>
             </div>
         )
     }
@@ -106,8 +109,8 @@ ans = () => {
     {
         return (
             <div className="result correct">
-            <span>Congrats, the answer is correct!</span> 
-            <button onClick={this.reset.bind()}>Try again</button>
+                <span>Congrats, the answer is correct!</span> 
+                <button onClick={this.reset.bind()}>Try again</button>
             </div>
         )
     }
@@ -115,8 +118,8 @@ ans = () => {
     {
         return (
             <div className="result wrong">
-            <span>Sorry, the answer is incorrect</span> 
-            <button onClick={this.reset.bind()}>Try again</button>
+                <span>Sorry, the answer is incorrect</span> 
+                <button onClick={this.reset.bind()}>Try again</button>
             </div>
         )
 
