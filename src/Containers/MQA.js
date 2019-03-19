@@ -12,6 +12,7 @@ class MQA extends React.Component {
 constructor() {
     super()
     this.state = initialState
+    this.next = this.next.bind(this)
 }
 componentDidMount() {
     fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple")
@@ -98,7 +99,9 @@ reset = () => {
                     <div className="mqa">
                         <h2 dangerouslySetInnerHTML={{__html: question}} />
                         <div className="answers">{ answers !== '' ? this.ans() : null }</div>
-                        <button onClick={this.next.bind(this)}>Next</button>
+                        <div className="button_body">
+                            <button onClick={this.next}>Next</button>
+                        </div>
                     </div>
                 </div>
             )
@@ -108,13 +111,15 @@ reset = () => {
             return (
                 <div className="result right">
                     <span>Congrats, you have completed the game. Your score is {score}</span> 
-                    <button onClick={this.reset.bind(this)}>Try again</button>
+                    <div className="button_body">
+                        <button onClick={this.reset.bind(this)}>Try again</button>
+                    </div>
                 </div>
             )
         }
     }
     else {
-        return 'Loading...'
+        return <div className="loading"><h1 className="title">Trivia</h1></div>
     }
   }
 }
