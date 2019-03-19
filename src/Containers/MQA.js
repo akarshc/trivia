@@ -62,12 +62,12 @@ next = () => {
                     score: score + 1
                 })
             }
+            this.setState({
+                index: this.state.index + 1,
+                checked: ''
+            })
+            this.answer_key()
         })
-        this.setState({
-            index: this.state.index + 1,
-            checked: ''
-        })
-        this.answer_key()
     }
 }
 ans = () => {
