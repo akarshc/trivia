@@ -1,6 +1,5 @@
 import React from 'react'
 import MQA from './Containers/MQA'
-import Home from './Containers/Home'
 import BG from './Images/bg.jpg'
 
 const initialState = {
@@ -26,7 +25,7 @@ class App extends React.Component {
           <h1 className="title" onClick={()=> this.setState({app: false})}>trivia</h1>
         </div>
         <div className="main">
-          {this.state.app ? <MQA /> : <Home startPlaying={this.startPlaying} />}
+          {this.state.app ? <MQA /> : <button onClick={this.startPlaying}>Start playing</button>}
         </div>
       </div>
     );

@@ -29,9 +29,13 @@
     0% {
         background:#fff;
     }
-    50% {
+    20% {
 
         background:#eeee00;
+    }
+    50% {
+
+        background:#6600ee;
     }
     80% {
 
