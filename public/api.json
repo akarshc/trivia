@@ -1,0 +1,18 @@
+{"response_code":0,"results":[
+
+    {"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"What&#039;s the name of Batman&#039;s  parents?","correct_answer":"Thomas &amp; Martha","incorrect_answers":["Joey &amp; Jackie","Jason &amp; Sarah","Todd &amp; Mira"]},
+    
+    {"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"How would one say goodbye in Spanish?","correct_answer":"Adi&oacute;s","incorrect_answers":[" Hola","Au Revoir","Salir"]},
+    
+    {"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"Which sign of the zodiac is represented by the Crab?","correct_answer":"Cancer","incorrect_answers":["Libra","Virgo","Sagittarius"]},
+    {"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"What is &quot;dabbing&quot;?","correct_answer":"A dance","incorrect_answers":["A medical procedure","A sport","A language"]},
+    
+    {"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"What type of animal was Harambe, who was shot after a child fell into it&#039;s enclosure at the Cincinnati Zoo?","correct_answer":"Gorilla","incorrect_answers":["Tiger","Panda","Crocodile"]},
+    
+    {"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"How many colors are there in a rainbow?","correct_answer":"7","incorrect_answers":["8","9","10"]},{"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"What is the nickname of the US state of California?","correct_answer":"Golden State","incorrect_answers":["Sunshine State","Bay State","Treasure State"]},
+    
+    {"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"According to Sherlock Holmes, &quot;If you eliminate the impossible, whatever remains, however improbable, must be the...&quot;","correct_answer":"Truth","incorrect_answers":["Answer","Cause","Source"]},
+    
+    {"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"What do the letters of the fast food chain KFC stand for?","correct_answer":"Kentucky Fried Chicken","incorrect_answers":["Kentucky Fresh Cheese","Kibbled Freaky Cow","Kiwi Food Cut"]},
+    
+    {"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"How tall is the Burj Khalifa?","correct_answer":"2,722 ft","incorrect_answers":["2,717 ft","2,546 ft","3,024 ft"]}]}

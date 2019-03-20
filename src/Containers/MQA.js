@@ -5,6 +5,7 @@ const initialState = {
     question: '',
     answers: '',
     checked: '',
+    changed: false,
     index: 0,
     score: 0
 }
@@ -26,7 +27,7 @@ componentWillMount() {
     })
 }
 answer_key = () => {
-    let {question, answers, api, index} = this.state
+    let {question, answers, api, index, changed} = this.state
     if(index < api.results.length)
     {
         let number = index + 1
@@ -36,7 +37,8 @@ answer_key = () => {
         {
             this.setState({
                 question: question,
-                answers: this.shuffle(answers)
+                answers: this.shuffle(answers),
+                changed: !changed
             })
         }
     }
@@ -98,7 +100,7 @@ reset = () => {
 }
   render() {
     console.log(this.state)
-    let {question, answers, api, index, score} = this.state
+    let {question, answers, api, index, score, changed} = this.state
     if(api !== '') {
         this.next()
         this.answer_key()
@@ -106,7 +108,7 @@ reset = () => {
         {
             return (
                 <div>
-                    <div className="mqa">
+                    <div className={changed ? "mqa mqa_fade" : "mqa"}>
                         <h2 dangerouslySetInnerHTML={{__html: question}} />
                         <div className="answers">{ answers !== '' ? this.ans() : null }</div>
                     </div>
