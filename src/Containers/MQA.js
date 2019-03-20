@@ -13,12 +13,12 @@ constructor() {
     super()
     this.state = initialState
     this.next = this.next.bind(this)
+    this.answer_key = this.answer_key.bind(this)
 }
-componentDidMount() {
+componentWillMount() {
     fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple")
     .then(res => res.json())
     .then(response => {
-        let {index} = this.state
         this.setState({
             api: response
         })
@@ -27,18 +27,19 @@ componentDidMount() {
 }
 answer_key = () => {
     let {question, answers, api, index} = this.state
-    if(index !== api.results.length)
+    if(index < api.results.length)
+    {
+        let number = index + 1
+        question = 'Q' + number + '. ' + api.results[index].question
+        answers = api.results[index].incorrect_answers.concat(api.results[index].correct_answer)
+        if(question !== this.state.question)
         {
-            question = 'Q' + index + '. ' + api.results[index].question
             this.setState({
-                question: question
-            })
-            answers = api.results[index].incorrect_answers + ',' + api.results[index].correct_answer
-            answers = answers.split(',')
-            this.setState({
+                question: question,
                 answers: this.shuffle(answers)
             })
         }
+    }
 }
 shuffle = (array) => {
     let currentIndex = array.length, temporaryValue, randomIndex
@@ -52,26 +53,33 @@ shuffle = (array) => {
     return array;
 }
 next = () => {
-    let {checked, api, score} = this.state
+    let {checked, api, score, index} = this.state
+    let flag = 0
     if(checked)
     {
         api.results.map((value,i) => {
-            if(checked === value.correct_answer && checked !== '')
+            if(checked === value.correct_answer)
             {
-                this.setState({
-                    score: score + 1
-                })
+                score = score + 1
+                flag = 1
             }
-            this.setState({
-                index: this.state.index + 1,
-                checked: ''
-            })
-            this.answer_key()
+            else {
+                flag = 1
+            }
+        })
+    }
+    if(flag)
+    {
+        this.setState({
+            score: score,
+            index: index + 1,
+            checked: ''
         })
     }
 }
 ans = () => {
     let {answers} = this.state
+
     return(answers.map((value,i) => {
         const checkbox = () => {
             this.setState({
@@ -86,12 +94,14 @@ ans = () => {
 }
 reset = () => {
     this.setState(initialState)
-    this.componentDidMount()
+    this.componentWillMount()
 }
   render() {
     console.log(this.state)
     let {question, answers, api, index, score} = this.state
     if(api !== '') {
+        this.next()
+        this.answer_key()
         if(index !== api.results.length)
         {
             return (
@@ -99,9 +109,6 @@ reset = () => {
                     <div className="mqa">
                         <h2 dangerouslySetInnerHTML={{__html: question}} />
                         <div className="answers">{ answers !== '' ? this.ans() : null }</div>
-                        <div className="button_body">
-                            <button onClick={this.next}>Next</button>
-                        </div>
                     </div>
                 </div>
             )
@@ -119,7 +126,7 @@ reset = () => {
         }
     }
     else {
-        return <div className="loading"><h1 className="title">Trivia</h1></div>
+        return <div className="loading"><h1 className="title">trivia</h1></div>
     }
   }
 }

@@ -20,7 +20,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="header">
-          <h1 className="title" onClick={()=> this.setState({app: false})}>Trivia</h1>
+          <h1 className="title" onClick={()=> this.setState({app: false})}>trivia</h1>
         </div>
         <div className="main">
           {this.state.app ? <MQA /> : <Home startPlaying={this.startPlaying} />}
