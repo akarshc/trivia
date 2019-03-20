@@ -103,7 +103,7 @@ body {
     background:#fff;
 }
 .mqa {
-    max-width:80%;
+    max-width:100%;
     animation: .6s ease-in-out 0s 1 fadeIn;
 }
 .mqa h2 {
@@ -171,4 +171,16 @@ button:hover {
 .main button,
 .main button:hover {
     background:transparent;
+}
+@media only screen and (max-width : 480px) {
+    .header,
+    .main {
+        max-width:90%;
+    }
+    .mqa {
+        max-width: 100%;
+    }
+    .answer {
+        display:block;
+    }
 }
