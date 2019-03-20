@@ -25,6 +25,23 @@
     }
 }
   
+@keyframes bgcolor {
+    0% {
+        background:#fff;
+    }
+    50% {
+
+        background:#eeee00;
+    }
+    80% {
+
+        background:#0088ee;
+    }
+    100% {
+        background: #44aa00;
+    }
+}
+
 body {
     background:#fff;
     font-family:calibri;
@@ -33,9 +50,12 @@ body {
     font-size:16px;
     animation: 1s ease-in-out 0s 1 fadeIn;
 }
+.header,
+.main {
+    z-index:2;
+}
 .title {
     cursor: default;
-    animation: changecolor 1s alternate infinite;
     letter-spacing: -3px;
     font-size:48px;
 }
@@ -54,6 +74,7 @@ body {
     width:100vw;
 }
 .loading .title {
+    animation: changecolor 1s alternate infinite;
     font-size:8em;
     line-height:0;
 }
@@ -63,6 +84,22 @@ body {
     justify-content: center;
     align-items:center;
     min-height:100vh;
+}
+.bg {
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    z-index:0;
+    opacity:.2;
+}
+.bg_inside {
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    z-index:0;
+    opacity:.3;
+    animation: bgcolor 6s alternate infinite;
+    background:#fff;
 }
 .mqa {
     max-width:80%;
@@ -129,4 +166,8 @@ button:hover {
     padding:15px 35px;
     color:#ee2200;
     background:#fff;
+}
+.main button,
+.main button:hover {
+    background:transparent;
 }
