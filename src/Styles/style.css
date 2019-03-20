@@ -53,6 +53,7 @@ body {
 .header,
 .main {
     z-index:2;
+    max-width:70%;
 }
 .title {
     cursor: default;

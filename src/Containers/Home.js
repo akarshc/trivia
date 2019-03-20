@@ -4,7 +4,7 @@ class Home extends React.Component {
 
   render(props) {
     return (
-      <div className="main">
+      <div>
         <button onClick={this.props.startPlaying}>Start playing</button>
       </div>
     );
