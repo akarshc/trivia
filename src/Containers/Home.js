@@ -1,14 +1,11 @@
 import React from 'react'
 
-class Home extends React.Component {
-
-  render(props) {
+const Home = ({startPlaying}) => {
     return (
       <div>
-        <button onClick={this.props.startPlaying}>Start playing</button>
+        <button onClick={startPlaying}>Start playing</button>
       </div>
     );
-  }
 }
 
 export default Home
