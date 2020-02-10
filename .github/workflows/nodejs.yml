@@ -17,7 +17,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: git remote add origin https://github.com/akarshc/trivia.git
     - run: git config --global user.name "akarshc"
     - run: git config --global user.email "akarshc1997@gmail.com"
     - run: npm install

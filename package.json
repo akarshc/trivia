@@ -1,8 +1,8 @@
 {
+  "homepage": "https://akarshc.github.io/trivia",
   "name": "mqa",
   "version": "0.1.0",
-  "homepage": "https://akarshc.github.io/trivia",
-  "private": false,
+  "private": true,
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
