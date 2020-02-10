@@ -68,6 +68,7 @@ next = () => {
             else {
                 flag = 1
             }
+            return null;
         })
     }
     if(flag)
