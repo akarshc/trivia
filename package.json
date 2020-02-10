@@ -1,6 +1,7 @@
 {
   "name": "mqa",
   "version": "0.1.0",
+  "homepage": "https://akarshc.github.io/trivia",
   "private": true,
   "dependencies": {
     "gh-pages": "^2.2.0",
